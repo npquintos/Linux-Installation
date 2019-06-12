@@ -10,8 +10,11 @@ To this end:
 2.  Install /home, /var, /tmp, to HD
 
 Basic Steps:
-1.  Install the Linux Distro to an SSD. Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories.
-2.  If this is the very first time, your HD would be blank. Format and mount it to /hd. Use the blkid command to determine the UUID of your hard disk. Sample /etc/fstab will look like this:
+1.  If this is not the first time, pull out the hard disk so that it is not overwritten during the Linux Distro installation.
+2.  Install the Linux Distro to an SSD. Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories.
+3.  If this is the very first time, your HD would be blank. Format and mount it to /hd. Use the blkid command to determine the UUID of your hard disk. If this is not the first time, pull out this disk so that it is untouched during installation in Step 1. 
+
+Sample ##/etc/fstab## will look like this:
 
 \# /etc/fstab: static file system information.
 
