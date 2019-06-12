@@ -14,16 +14,22 @@ Basic Steps:
 2.  If this is the very first time, your HD would be blank. Format and mount it to /hd. Use the blkid command to determine the UUID of your hard disk. Sample /etc/fstab will look like this:
 
 \# /etc/fstab: static file system information.
-\#
+
 \# Use 'blkid' to print the universally unique identifier for a
+
 \# device; this may be used with UUID= as a more robust way to name devices
+
 \# that works even if disks are added and removed. See fstab(5).
-\#
+
 \# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+  
 \# / was on /dev/sda1 during installation
+
 UUID=4e40df13-dbe0-4aae-b378-6a5950d9ca8f /               ext4    errors=remount-ro 0       1
+
 \# /hd was on /dev/sda2 during installation
 UUID=858d78e2-550f-45e2-becc-117cef6553b2 /hd             ext4    defaults        0       2
+
 \# swap was on /dev/sda1 during installation
 UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw              0       0
 /hd/var      /var     none    bind       0     0
