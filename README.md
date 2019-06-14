@@ -1,21 +1,25 @@
 # Linux-Installation
 Ideal way to install a Linux Distro
 
-An ideal intallation would be:
+## An ideal intallation would be:
 1.  fast start-up time
-2.  Easy re-installation of Distro
+2.  Easy re-installation/refresh of Distro
 
-To this end:
-1.  Install OS and executables to SSD
-2.  Install /home, /var, /tmp, to HD
+## To this end:
+1.  Install OS and executables to SSD for fast start-up time
+2.  Install /home, /var, /tmp, /srv to HD to preserve user's data (/home) and minimize disk write damage (/var, /tmp, /srv) as SSD is sensitive to writes.
 
-Basic Steps:
-1.  If this is not the first time, pull out the hard disk so that it is not overwritten during the Linux Distro installation.
-2.  Install the Linux Distro to an SSD. Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories.
-3.  If this is the very first time, your HD would be blank. Format and mount it to /hd. Use the blkid command to determine the UUID of your hard disk. If this is not the first time, pull out this disk so that it is untouched during installation in Step 1. 
+## Basic Steps for first time installation:
+1.  Pull out the HD (hard disk)
+2.  Install the Linux Distro to an SSD (Solid State Disk). Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories. Reboot when installation is finished.
+3.  Format the HD as a **single** partition. 
+4.  Use **df -h** to determine the device numbers of the HD and SSD (eg. /dev/sda1, /dev/sdb1). Identify which device number is which disk.
+5.  mount the HD to **/hd** (sudo mount /dev/sdxx /hd).
+6.  Use the **blkid** command to determine the UUID of your hard disk (eg. blkid /dev/sda1). 
+7.  Edit /etc/fstab using the guide below. Use the UUIDs determined in Step 6. A copy of this file is in the repository.
 
 Sample ##/etc/fstab## will look like this:
-
+---
 \# /etc/fstab: static file system information.
 
 \# Use 'blkid' to print the universally unique identifier for a
@@ -42,8 +46,22 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 
 /hd/home     /home    none    bind       0     0
 
-/hd/opt      /opt     none    bind       0     0
-  
+/hd/srv      /srv     none    bind       0     0
 
+---  
+8.  **cp -pr /var /hd/var
+9.  **cp -pr /home /hd/home
+10. **cp -pr /tmp /hd/tmp
+11. If /srv exist, **cp -pr /srv /hd/srv
+Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
+12. Reboot and confirm that there are no problems.
+13. **cd /etc/skel
+14. **sudo git clone https://github.com/npquintos/dotfiles
+15. **cd dotfiles
+16. **chmod +x link_my_dot_files.sh
+17. **./link_my_dot_files.sh** --> this will create soft links to these dot files for all users in /home
+18. **chmod +x install_my_favourite_apps.sh
+19. Edit **list_of_apps.txt** to include those apps that you like. It is OK if some of them are already installed as they will be skipped.
+20  **./install_my_favourite_apps.sh
 
 
