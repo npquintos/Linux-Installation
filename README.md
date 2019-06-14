@@ -49,19 +49,19 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 /hd/srv      /srv     none    bind       0     0
 
 ---  
-8.  **cp -pr /var /hd/var
-9.  **cp -pr /home /hd/home
-10. **cp -pr /tmp /hd/tmp
-11. If /srv exist, **cp -pr /srv /hd/srv
+8.  **cp -pr /var /hd/var**
+9.  **cp -pr /home /hd/home**
+10. **cp -pr /tmp /hd/tmp**
+11. If /srv exist, **cp -pr /srv /hd/srv**
 Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
-13. **cd /etc/skel
-14. **sudo git clone https://github.com/npquintos/dotfiles
-15. **cd dotfiles
-16. **chmod +x link_my_dot_files.sh
+13. **cd /etc/skel**
+14. **sudo git clone https://github.com/npquintos/dotfiles**
+15. **cd dotfiles**
+16. **chmod +x link_my_dot_files.sh**
 17. **./link_my_dot_files.sh** --> this will create soft links to these dot files for all users in /home
-18. **chmod +x install_my_favourite_apps.sh
+18. **chmod +x install_my_favourite_apps.sh**
 19. Edit **list_of_apps.txt** to include those apps that you like. It is OK if some of them are already installed as they will be skipped.
-20  **./install_my_favourite_apps.sh
+20  **./install_my_favourite_apps.sh**
 
 
