@@ -1,4 +1,8 @@
-build-essential # so that you could comipile C++ from source
+build-essential # C++ compilation for Debian
+build-devel     # C++ compilation for Arch
+cmake
+gcc-c++
+clang
 zsh             # last shell you will ever need
 tmux            # This + vim + st = you won't need i3
 vim
