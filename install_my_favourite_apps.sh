@@ -1,31 +1,34 @@
 # !/bin/bash
 
-function distro {
-    result=$(lsb_release --id | awk '{print $3}')
-    echo ${result^^}
-}
-
 function install_cmd {
-    case $1 in
-        REDHATENTERPRISESERVER|REDHAT )
-            echo "yum" ;;
-        ARCH|ARCO|MANJARO )
-            echo "pacman -S" ;;
-        DEBIAN|UBUNTU|MINT|MX )
-            echo "apt-get install" ;;
+    for install_cmd in 'apt-get' 'yay' 'trizen' 'yaourt' 'pacaur' 'packer'
+    do
+	which ${install_cmd} > /dev/null 2>&1
+	if [ "$?" == "0" ]; then
+	    break
+	fi
+    done
+    case ${install_cmd} in
+        apt_get )
+	    echo "apt-get install" ;;
+        yay|yaourt )
+	    echo "${install_cmd} -S --noconfirm" ;;
+        trizen )
+	    echo "${install_cmd} -S --noconfirm --needed --noedit" ;;
+        pacaur|packer )
+	    echo "${install_cmd} -S --noconfirm --noedit" ;;
     esac
 }
 
 APP_LIST=$(cat list_of_apps.txt)
-DISTRO=$(distro)
-COMMAND=$(install_cmd ${DISTRO})
-echo "distro is ${DISTRO}"
-for APP in $APP_LIST
+COMMAND=$(install_cmd)
+for APP in ${APP_LIST}
 do
-    which ${APP} > /dev/null 2>&1
-    if [ "$?" != "0" ]; then
+    echo "${APP} is about tobe checked"
+    if which ${APP} > /dev/null 2>&1; then
         echo "installing ${APP}"
-        # eval "${COMMAND} ${APP}"
+	echo "${COMMAND} ${APP}"
+        eval "${COMMAND} ${APP}"
     else
         echo "${APP} already installed !"
     fi
