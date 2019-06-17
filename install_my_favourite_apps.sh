@@ -1,7 +1,7 @@
 # !/bin/bash
 
 function install_cmd {
-    for install_cmd in 'apt-get' 'yay' 'trizen' 'yaourt' 'pacaur' 'packer' 'yum'
+    for install_cmd in 'apt-get' 'yay' 'trizen' 'yaourt' 'pacaur' 'packer' 'yum' 'dnf'
     do
 	which ${install_cmd} > /dev/null 2>&1
 	if [ "$?" == "0" ]; then
@@ -9,8 +9,8 @@ function install_cmd {
 	fi
     done
     case ${install_cmd} in
-        apt_get )
-	    echo "apt-get install" ;;
+        apt_get|dnf )
+	    echo "${install_cmd} install" ;;
         yay|yaourt )
 	    echo "${install_cmd} -S --noconfirm" ;;
         trizen )
