@@ -1,7 +1,7 @@
 # !/bin/bash
 
 function install_cmd {
-    for install_cmd in 'apt-get' 'yay' 'trizen' 'yaourt' 'pacaur' 'packer'
+    for install_cmd in 'apt-get' 'yay' 'trizen' 'yaourt' 'pacaur' 'packer' 'yum'
     do
 	which ${install_cmd} > /dev/null 2>&1
 	if [ "$?" == "0" ]; then
@@ -17,14 +17,15 @@ function install_cmd {
 	    echo "${install_cmd} -S --noconfirm --needed --noedit" ;;
         pacaur|packer )
 	    echo "${install_cmd} -S --noconfirm --noedit" ;;
+	yum )
+	    echo "${install_cmd} -y install" ;;
     esac
 }
 
 APP_LIST=$(cat list_of_apps.txt)
 COMMAND=$(install_cmd)
-for APP in ${APP_LIST}
-do
-    echo "${APP} is about tobe checked"
+while read -r APP; do
+    echo "${APP} is about to be checked"
     if which ${APP} > /dev/null 2>&1; then
         echo "installing ${APP}"
 	echo "${COMMAND} ${APP}"
@@ -32,4 +33,5 @@ do
     else
         echo "${APP} already installed !"
     fi
-done
+done < list_of_apps.txt
+
