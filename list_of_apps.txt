@@ -1,4 +1,6 @@
-zsh
-tmux
-vlc
+build-essential # so that you could comipile C++ from source
+zsh             # last shell you will ever need
+tmux            # This + vim + st = you won't need i3
 vim
+st
+vlc             # my preferred video/audio player
