@@ -14,8 +14,9 @@ Ideal way to install a Linux Distro
 2.  Install the Linux Distro to an SSD (Solid State Disk). Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories. Reboot when installation is finished.
 3.  Format the HD as a **single** partition. 
 4.  Use **df -h** to determine the device numbers of the HD and SSD (eg. /dev/sda1, /dev/sdb1). Identify which device number is which disk.
-5.  mount the HD to **/hd** (sudo mount /dev/sdxx /hd).
-6.  Use the **blkid** command to determine the UUID of your hard disk (eg. blkid /dev/sda1). 
+5.  Create the mount point directory **/hd** in the SSD and mount the HD to **/hd** (sudo mount /dev/sdxx /hd).
+6.  Use the **blkid** command to determine the UUID of your hard disk (eg. blkid /dev/sda1). You **won't** be able to get any value
+    out of **blkid** unless the disk is mounted.
 7.  Edit /etc/fstab using the guide below. Use the UUIDs determined in Step 6. A copy of this file is in the repository.
 
 Sample ##/etc/fstab## will look like this:
@@ -56,7 +57,7 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
 13. **cd /etc/skel**
-14. **sudo git clone https://github.com/npquintos/dotfiles**
+14. **sudo git clone https://github.com/npquintos/dotfiles.git**
 15. **cd dotfiles**
 16. **chmod +x link_my_dot_files.sh**
 17. **./link_my_dot_files.sh** --> this will create soft links to these dot files for all users in /home
