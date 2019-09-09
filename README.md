@@ -59,10 +59,9 @@ Steps 8, 9, 10, and 11 are to make the new installation consistent because insta
 13. **cd /etc/skel**
 14. **sudo git clone https://github.com/npquintos/dotfiles.git**
 15. **cd dotfiles**
-16. **chmod +x link_my_dot_files.sh**
-17. **./link_my_dot_files.sh** --> this will create soft links to these dot files for all users in /home
-18. **chmod +x install_my_favourite_apps.sh**
-19. Edit **list_of_apps.txt** to include those apps that you like. It is OK if some of them are already installed as they will be skipped.
-20  **./install_my_favourite_apps.sh**
+16. **bash make_link_to_dotfiles.sh**  --> this will create soft links to these dot files in your own /home
+17. **chmod +x install_my_favourite_apps.sh**
+18. Edit **list_of_apps.txt** to include those apps that you like. It is OK if some of them are already installed as they will be skipped.
+19  **./install_my_favourite_apps.sh**
 
 
