@@ -56,7 +56,7 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 11. If /srv exist, **cp -pr /srv /hd/srv**
 Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
-13. **cd /etc/skel**
+13. **cd /tmp**
 14. **sudo git clone https://github.com/npquintos/dotfiles.git**
 15. **cd dotfiles**
 16. **bash make_link_to_dotfiles.sh**  --> this will create soft links to these dot files in your own /home
