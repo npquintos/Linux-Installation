@@ -57,11 +57,9 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
 13. **cd /tmp**
-14. **sudo git clone https://github.com/npquintos/dotfiles.git**
-15. **cd dotfiles**
-16. **bash make_link_to_dotfiles.sh**  --> this will create soft links to these dot files in your own /home
-17. **chmod +x install_my_favourite_apps.sh**
-18. Edit **list_of_apps.txt** to include those apps that you like. It is OK if some of them are already installed as they will be skipped.
-19  **./install_my_favourite_apps.sh**
+14. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
+15. **cd Linux-Installation**
+16. **bash install_my_fave_apps_and_dots.sh**
+
 
 
