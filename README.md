@@ -59,7 +59,7 @@ Steps 8, 9, 10, and 11 are to make the new installation consistent because insta
 13. **cd /tmp**
 14. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
 15. **cd Linux-Installation**
-16. **bash install_my_fave_apps_and_dots.sh**
+16. **sudo bash install_my_fave_apps_and_dots.sh**
 
 
 
