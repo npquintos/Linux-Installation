@@ -26,6 +26,18 @@ function install_cmd {
     esac
 }
 
+function distro_name {
+    this_distro=$(ls /etc/*-release | grep -wf distro | sed 's/\/etc\///' | sed 's/-release//')
+    case $this_distro in
+        redhat | centos )
+            echo "redhat" ;;
+        ubuntu | mint | debian | mx )
+            echo "debian" ;;
+        arch | arco | manjaro
+            echo "arch" ;;
+    esac
+}
+
 function app_exists {
     case $1 in
         apt-get|dnf )
