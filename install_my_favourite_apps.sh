@@ -29,7 +29,7 @@ function install_cmd {
 function distro_name {
     this_distro=$(ls /etc/*-release | grep -wf distro | sed 's/\/etc\///' | sed 's/-release//')
     case $this_distro in
-        redhat | centos )
+        redhat | centos | fedora )
             echo "redhat" ;;
         ubuntu | mint | debian | mx )
             echo "debian" ;;
