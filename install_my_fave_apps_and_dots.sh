@@ -6,4 +6,6 @@ bash link_dot_files.sh
 cd /tmp
 git clone https://git.suckless.org/st
 cd st
+make clean install
+cd /tmp
 
