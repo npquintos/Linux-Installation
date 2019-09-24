@@ -1,5 +1,6 @@
 build-essential # C++ compilation for Debian
 build-devel     # C++ compilation for Arch
+libx11-dev
 cmake
 gcc-c++
 clang
