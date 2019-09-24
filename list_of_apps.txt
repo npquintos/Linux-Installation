@@ -6,5 +6,6 @@ clang
 zsh             # last shell you will ever need
 tmux            # This + vim + st = you won't need i3
 vim
-st
+curl
+wget
 vlc             # my preferred video/audio player
