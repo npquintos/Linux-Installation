@@ -53,23 +53,28 @@ function app_exists() {
     esac
 }
 
+function install_my_favorite() {
+    IFS=$'\n'
+    echo "about to install packages contained in $1"
+    for APP in $(sed 's/ *#.*$//' $1)
+    do
+        echo ">>>> ${APP} <<<< is about to be checked"
+        ${CHECK_IF_IT_EXISTS} ${APP} > /dev/null 2>&1
+        echo $?
+        if ${CHECK_IF_IT_EXISTS} ${APP} > /dev/null 2>&1; then
+            echo "     ${APP} already installed !"
+        else
+            echo "     installing ${APP}"
+            echo "     ${INSTALL_COMMAND} ${APP}"
+           eval "${INSTALL_COMMAND} ${APP}"
+        fi
+    done
+}
+
 PACKAGE_INSTALLER=$(pkg_installer)
 INSTALL_COMMAND=$(install_cmd $PACKAGE_INSTALLER)
 CHECK_IF_IT_EXISTS=$(app_exists "${PACKAGE_INSTALLER}")
-IFS=$'\n'
-for APP in $(sed 's/ *#.*$//' list_of_apps.txt)
-do
-    echo ">>>> ${APP} <<<< is about to be checked"
-    ${CHECK_IF_IT_EXISTS} ${APP} > /dev/null 2>&1
-    echo $?
-    if ${CHECK_IF_IT_EXISTS} ${APP} > /dev/null 2>&1; then
-        echo "     ${APP} already installed !"
-    else
-        echo "     installing ${APP}"
-        echo "     ${INSTALL_COMMAND} ${APP}"
-        eval "${INSTALL_COMMAND} ${APP}"
-    fi
-done
-
+install_my_favorite("list_of_apps.txt")
 CONDA_DEPENDENCY=$(distro_name($PACKAGE_INSTALLER))_conda
+install_my_favorite($CONDA_DEPENDENCY)
 
