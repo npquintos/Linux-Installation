@@ -51,7 +51,7 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 
 ---  
 8.  **cp -pr /var /hd/var**
-9.  if your hd is blank, **cp -pr /home /hd/home** else, **cp -Rn /home/* /hd/home/.**
+9.  if your hd is blank, **cp -pr /home /hd/home** else, **cp -Rn /home/\* /hd/home/\. **
 10. **cp -pr /tmp /hd/tmp**
 11. If /srv exist, **cp -pr /srv /hd/srv**
 Steps 8, 9, 10, and 11 are to make the new installation consistent because installation information are stored here.
