@@ -1,5 +1,4 @@
-build-essential # C++ compilation for Debian
-build-devel     # C++ compilation for Arch
+build-essential|
 libx11-dev
 cmake
 gcc-c++
@@ -10,3 +9,4 @@ vim
 curl
 wget
 vlc             # my preferred video/audio player
+neovim | ppa:neovim-ppa/unstable
