@@ -1,0 +1,12 @@
+build-essential|
+libx11-dev|
+cmake|ppa:george-edison55/cmake-3.x
+gcc-c++|
+clang|
+zsh|
+tmux|
+vim|
+curl|
+wget|
+vlc|ppa:videolan/stable-daily
+neovim|ppa:neovim-ppa/unstable
