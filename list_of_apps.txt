@@ -8,5 +8,16 @@ tmux|
 vim|
 curl|
 wget|
+manuskript|
+libgl1-mesa-glx|
+libegl1-mesa|
+libxrandr2|
+libxss1|
+libxcursor1|
+libxcomposite1|
+libasound2|
+libxi6|
+libxtst6|
 vlc|ppa:videolan/stable-daily
 neovim|ppa:neovim-ppa/unstable
+krita|ppa:kritalime/ppa
