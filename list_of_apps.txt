@@ -9,6 +9,7 @@ tmux|
 vim|
 curl|
 wget|
+tree|
 manuskript|
 libgl1-mesa-glx|
 libegl1-mesa|
@@ -22,3 +23,4 @@ libxtst6|
 vlc|ppa:videolan/stable-daily
 neovim|ppa:neovim-ppa/unstable
 krita|ppa:kritalime/ppa
+stterm|
