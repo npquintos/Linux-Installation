@@ -68,6 +68,7 @@ Steps 8, 9, 11, and 12 are to make the new installation consistent because insta
 14. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
 15. **cd Linux-Installation**
 16. **sudo bash install_my_fave_apps_and_dots.sh**
+17. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
 
 
 
