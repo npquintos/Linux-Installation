@@ -23,4 +23,4 @@ function install_my_favorite() {
     done
 }
 
-install_my_favorite list_of_apps.txt
+install_my_favorite ./list_of_apps.txt
