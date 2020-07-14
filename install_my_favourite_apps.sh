@@ -24,3 +24,6 @@ function install_my_favorite() {
 }
 
 install_my_favorite ./list_of_apps.txt
+
+wget -O /usr/local/bin/z.sh -L https://github.com/rupa/z/blob/master/z.sh   
+chmod a+x /usr/local/bin/z.sh
