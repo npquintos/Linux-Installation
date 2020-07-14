@@ -64,11 +64,12 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 13. If /srv exist, **cp -pr /srv /hd/srv**
 Steps 8, 9, 11, and 12 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
-13. **cd /tmp**
-14. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
-15. **cd Linux-Installation**
-16. **sudo bash install_my_fave_apps_and_dots.sh**
-17. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
+13. Install git: **sudo apt-get install git**
+14. **cd /tmp**
+15. **sudo git clone https://github.com/npquintos/Linux-Installation.git**
+16. **cd Linux-Installation**
+17. **sudo bash install_my_fave_apps_and_dots.sh**
+18. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
 
 
 
