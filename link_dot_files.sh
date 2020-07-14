@@ -7,7 +7,7 @@ for i in $(ls ${mysource}/__*); do
     k=${j/__/\.}
     echo "cp $i /etc/skel/$k"
     cp -f $i /etc/skel/$k
-    echo "ln -s /etc/skel/$k ${myhome)/$k"
+    echo "ln -s /etc/skel/$k ${myhome}/$k"
     ln -s /etc/skel/$k ${myhome}/$k
 done
 cp -f ${mysource}/init.vim /etc/skel/init.vim
