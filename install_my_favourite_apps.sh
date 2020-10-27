@@ -18,7 +18,7 @@ function install_my_favorite() {
             echo "     ${INFO[0]} already installed !"
         else
             echo "     installing ${INFO[0]}"
-            eval "apt-get install ${INFO[0]}"
+            eval "apt-get install -y ${INFO[0]}"
         fi
     done
 }
