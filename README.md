@@ -12,12 +12,11 @@ Ideal way to install a Linux Distro
 ## Basic Steps for first time installation:
 1.  Pull out the HD (hard disk)
 2.  Install the Linux Distro to an SSD (Solid State Disk). Use only one partition - /. In this way, you maximize the disk space and not run out of space on your /usr/bin or /var directories. 
- - Install **gparted**. 
  - Add users. 
  - Shutdown when installation is finished; 
  - re-attach the HD, then, power-up to boot.
 3.  If your HD has contents, don't do anything. Otherwise, format the HD as a **single** partition. 
-4.  Use **gparted** to determine the device numbers of the HD and SSD (eg. /dev/sda1, /dev/sdb1). Identify which device number is which disk.
+4.  Run **fdisk l** to determine the device numbers of the HD and SSD (eg. /dev/sda1, /dev/sdb1). Identify which device number is which disk.
 5.  Create the mount point directory **/hd** in the SSD and mount the HD to **/hd** (sudo mount /dev/sdxx /hd).
 6.  Use the **blkid** command to determine the UUID of your hard disk (eg. blkid /dev/sda1). You **won't** be able to get any value
     out of **blkid** unless the disk is mounted.
