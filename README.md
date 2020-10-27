@@ -71,9 +71,12 @@ Steps 8, 9, 11, and 12 are to make the new installation consistent because insta
 18. **sudo vim /etc/passwd - change your shell to /usr/bin/zsh**
 
 If you want to install st manually,
+
 $ sudo apt-get install libx11-dev libxext-dev libxft-dev
+
 download st source here: https://st.suckless.org/
 then,
+
 sudo make clean install
 
 
