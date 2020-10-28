@@ -50,17 +50,17 @@ UUID=109abccf-7c8b-404a-b68e-2ffa168bc4ca none            swap    sw            
 
 /hd/tmp      /tmp     none    bind       0     0
 
-/hd/home     /home    none    bind       0     0
+\#/hd/home     /home    none    bind       0     0
 
 /hd/srv      /srv     none    bind       0     0
 
 ---  
 8.  **rm -rf /hd/var**
 9.  **cp -pr /var /hd/var**
-10.  if your hd is blank, **cp -pr /home /hd/home** else, DON'T DO ANYTHING
+10.  if your hd is blank, **cp -pr /home /hd/home** else, DON'T DO ANYTHING; link old contents instead **ln -s /hd/home/user1 /home/user1**. Don't forget that if you ever added a new user, say, user10, you have to **mkdir /hd/home/user10; cp -pr /home/user10 /hd/home/user10; ln -s /hd/home/user10 /home/user10**. The intent is that user10 data would go to /hd instead of the ssd.
 11. **rm -rf /hd/tmp**
 12. **cp -pr /tmp /hd/tmp**
-13. If /srv exist, **cp -pr /srv /hd/srv**
+13. If /srv exist, **cp -pr /srv /hd/srv; ln -s /hd/srv /srv**
 Steps 8, 9, 11, and 12 are to make the new installation consistent because installation information are stored here.
 12. Reboot and confirm that there are no problems.
 13. Install git: **sudo apt-get install git**
