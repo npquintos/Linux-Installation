@@ -79,8 +79,8 @@ then,
 
 sudo make clean install
 
-If you need to compile and it is giving you an error about missing dependency, 
-do the following:
+## If you need to compile and it is giving you an error about missing dependency, 
+do the following:##
 
 To find to which package your include file (e.g. X11/extensions/XTest.h) belong to, install apt-file and search for it, example:
 
