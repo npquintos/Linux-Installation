@@ -79,5 +79,19 @@ then,
 
 sudo make clean install
 
+If you need to compile and it is giving you an error about missing dependency, 
+do the following:
+
+To find to which package your include file (e.g. X11/extensions/XTest.h) belong to, install apt-file and search for it, example:
+
+$ sudo apt-get install apt-file
+$ sudo apt-file update
+$ apt-file search "X11/extensions/XTest.h"
+libxtst-dev: /usr/include/X11/extensions/XTest.h
+
+Once you've the package name, install via:
+
+sudo apt-get install libxtst-dev
+
 
 
