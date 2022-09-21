@@ -1,6 +1,6 @@
 build-essential
 ninja
-meson|
+meson
 libx11-dev
 dwm
 gcc-c++
