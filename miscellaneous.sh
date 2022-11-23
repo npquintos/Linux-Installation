@@ -2,6 +2,9 @@
 # Download Nerd Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FantasqueSansMono.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Meslo.zip
+sudo mkdir /path/to/fonts/fontname
+sudo unzip FantasqueSansMono.zip -d /path/to/fonts/fontname
+sudo unzip Meslo.zip -d /path/to/fonts/fontname
 # Install PowerLevel10 prompt
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
