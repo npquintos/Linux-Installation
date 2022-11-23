@@ -1,9 +1,7 @@
 build-essential
-ninja
+ninja-build
 meson
 libx11-dev
-dwm
-gcc-c++
 clang
 zsh
 tmux
@@ -22,5 +20,5 @@ libasound2
 libxi6
 libxtst6
 vlc
-krita
+krita|ppa:kritalime/ppa
 stterm
