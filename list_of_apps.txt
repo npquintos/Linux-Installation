@@ -24,6 +24,8 @@ vlc
 krita|ppa:kritalime/ppa
 stterm
 #CLI
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim +PackerSync
 curl -s "https://get.sdkman.io" | bash     # Kotlin
 source "$HOME/.sdkman/bin/sdkman-init.sh"  # Kotlin
 sdk install kotlin                         # Kotlin
