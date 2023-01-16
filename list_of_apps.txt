@@ -11,27 +11,27 @@ curl
 wget
 tree
 manuskript
-libgl1-mesa-glx
-libegl1-mesa
-libxrandr2
-libxss1
-libxcursor1
-libxcomposite1
-libasound2
-libxi6
-libxtst6
+libgl1-mesa-glx # Anaconda Dependency
+libegl1-mesa    # Anaconda Dependency
+libxrandr2      # Anaconda Dependency
+libxss1         # Anaconda Dependency
+libxcursor1     # Anaconda Dependency
+libxcomposite1  # Anaconda Dependency
+libasound2      # Anaconda Dependency
+libxi6          # Anaconda Dependency
+libxtst6        # Anaconda Dependency
 vlc
 krita|ppa:kritalime/ppa
 stterm
 #CLI
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk install kotlin
-curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
-git clone https://github.com/nim-lang/Nim
-cd Nim
-git clone --depth 1 https://github.com/nim-lang/csources
-cd csources && sh build.sh
-cd ..
-bin/nim c koch
-./koch boot -d:release
+curl -s "https://get.sdkman.io" | bash     # Kotlin
+source "$HOME/.sdkman/bin/sdkman-init.sh"  # Kotlin
+sdk install kotlin                         # Kotlin
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh  # Rust
+git clone https://github.com/nim-lang/Nim                   # Nim
+cd Nim                                                      # Nim
+git clone --depth 1 https://github.com/nim-lang/csources    # Nim
+cd csources && sh build.sh                                  # Nim
+cd ..                                                       # Nim
+bin/nim c koch                                              # Nim
+./koch boot -d:release                                      # Nim
