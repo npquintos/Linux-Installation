@@ -8,7 +8,6 @@ def clean_line(line):
         return line.strip()
 
 def apt_command(line):
-    line = clean_line(line)
     if '|' in line:
         package_name, ppa = line.strip().split('|')
         os.system(f'sudo add-apt-repository {ppa}')
@@ -18,10 +17,9 @@ def apt_command(line):
     os.system(f'sudo apt-get install {package_name}')
 
 def manual_install(line):
-    line = clean_line(line)
     os.system(f'sudo {line}')
 
-process = {\
+do_install = {\
                 'APT':apt_command,
                 'CLI':manual_install\
           }
@@ -32,7 +30,8 @@ with open('list_of_apps.txt', 'r') as fin:
         if line[0] == '#':
             mode = line.strip().replace('#', '')
             continue
-        process[mode](line)
+        line = clean_line(line)
+        do_install[mode](line)
 
 
 
